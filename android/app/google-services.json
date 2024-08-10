@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8578502738",
+    "project_id": "hyrule-compedium-login",
+    "storage_bucket": "hyrule-compedium-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8578502738:android:805685a54dc8acf3db0f8b",
+        "android_client_info": {
+          "package_name": "com.example.practice_list_view"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVB4j_j1cDTJbbTEDYpgbSfylr1xOaTwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

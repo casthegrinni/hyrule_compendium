@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:practice_list_view/screens/chest_page.dart';
-import 'package:practice_list_view/screens/result_page.dart';
+import 'package:practice_list_view/screens/login_page.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const MyApp());
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown),
         useMaterial3: true,
       ),
-      home: ResultPage(),
+      home: LoginPage(),
     );
   }
 }
