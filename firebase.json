@@ -44,7 +44,7 @@
       "port": 9099
     },
     "ui": {
-      "enabled": true
+      "enabled": false
     }
   }
 }

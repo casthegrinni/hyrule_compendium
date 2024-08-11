@@ -12,6 +12,15 @@ class LoginPage extends StatelessWidget {
 
   final LoginController controller = LoginController();
 
+  void goToResultPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ResultPage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,12 +74,7 @@ class LoginPage extends StatelessWidget {
                 DefaultButton(
                   text: 'Login',
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ResultPage(),
-                      ),
-                    );
+                    goToResultPage(context);
                   },
                 ),
                 const SizedBox(height: 12),
