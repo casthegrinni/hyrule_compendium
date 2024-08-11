@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:practice_list_view/screens/login_page.dart';
 
 Future<void> main() async {
-  runApp(const MyApp());
-
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

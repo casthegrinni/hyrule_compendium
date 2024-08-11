@@ -4,6 +4,7 @@ import 'package:practice_list_view/screens/components/default_button.dart';
 import 'package:practice_list_view/screens/components/default_textfield.dart';
 import 'package:practice_list_view/screens/result_page.dart';
 import 'package:practice_list_view/utils/consts/colors.dart';
+import 'package:practice_list_view/utils/consts/images.dart';
 import 'package:practice_list_view/utils/theme.dart';
 
 class LoginPage extends StatelessWidget {
@@ -24,13 +25,18 @@ class LoginPage extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                child: Text(
-                  'Hyrule Compendium',
-                  textAlign: TextAlign.center, // Centraliza o texto
-                  style: EntryDecoration.titleText.copyWith(
-                    fontSize: 32,
-                    color: Colors.black,
-                  ),
+                child: Column(
+                  children: [
+                    Text(
+                      'Hyrule Compendium',
+                      textAlign: TextAlign.center,
+                      style: EntryDecoration.titleText.copyWith(
+                        fontSize: 32,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: 205, child: Image.asset(appLogo))
+                  ],
                 ),
               ),
               const SizedBox(height: 60),

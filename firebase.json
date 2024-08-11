@@ -1,1 +1,50 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"hyrule-compedium-login","appId":"1:8578502738:android:805685a54dc8acf3db0f8b","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"hyrule-compedium-login","appId":"1:8578502738:ios:2433095c908bd93cdb0f8b","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"hyrule-compedium-login","appId":"1:8578502738:ios:2433095c908bd93cdb0f8b","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"hyrule-compedium-login","configurations":{"android":"1:8578502738:android:805685a54dc8acf3db0f8b","ios":"1:8578502738:ios:2433095c908bd93cdb0f8b","macos":"1:8578502738:ios:2433095c908bd93cdb0f8b","web":"1:8578502738:web:c86d0468548464fadb0f8b","windows":"1:8578502738:web:c4997c0396f1332bdb0f8b"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "hyrule-compedium-login",
+          "appId": "1:8578502738:android:805685a54dc8acf3db0f8b",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "hyrule-compedium-login",
+          "appId": "1:8578502738:ios:2433095c908bd93cdb0f8b",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "hyrule-compedium-login",
+          "appId": "1:8578502738:ios:2433095c908bd93cdb0f8b",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "hyrule-compedium-login",
+          "configurations": {
+            "android": "1:8578502738:android:805685a54dc8acf3db0f8b",
+            "ios": "1:8578502738:ios:2433095c908bd93cdb0f8b",
+            "macos": "1:8578502738:ios:2433095c908bd93cdb0f8b",
+            "web": "1:8578502738:web:c86d0468548464fadb0f8b",
+            "windows": "1:8578502738:web:c4997c0396f1332bdb0f8b"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "singleProjectMode": true,
+    "auth": {
+      "port": 9099
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}
