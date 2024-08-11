@@ -12,14 +12,19 @@ class DefaultButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       style: ButtonStyle(
-        padding:
-            MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 16)),
-        backgroundColor: MaterialStateProperty.all(secondColor),
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        )),
+        padding: WidgetStateProperty.all(
+          const EdgeInsets.symmetric(vertical: 16),
+        ),
+        backgroundColor: WidgetStateProperty.all(secondColor),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
       ),
-      onPressed: onPressed(),
+      onPressed: () {
+        onPressed();
+      },
       child: Text(
         text,
         style: EntryDecoration.titleText

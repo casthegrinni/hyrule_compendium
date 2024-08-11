@@ -69,7 +69,10 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 12),
                 DefaultButton(
                   text: 'Create account',
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.createAccount(
+                        'teste@hotmail.com', 'SenhaComplexa@100');
+                  },
                 )
               ],
             ),
