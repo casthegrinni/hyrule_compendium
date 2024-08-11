@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:practice_list_view/controllers/login_controller.dart';
 import 'package:practice_list_view/screens/components/default_button.dart';
 import 'package:practice_list_view/screens/components/default_textfield.dart';
+import 'package:practice_list_view/screens/result_page.dart';
 import 'package:practice_list_view/utils/consts/colors.dart';
 import 'package:practice_list_view/utils/theme.dart';
 
@@ -57,7 +58,14 @@ class LoginPage extends StatelessWidget {
               children: [
                 DefaultButton(
                   text: 'Login',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ResultPage(),
+                      ),
+                    );
+                  },
                 ),
                 const SizedBox(height: 12),
                 const SizedBox(
