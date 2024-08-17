@@ -23,6 +23,9 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       backgroundColor: mainColor,
       appBar: AppBar(backgroundColor: mainColor),
@@ -49,17 +52,18 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 60),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: DefaultTextfield(
-                  text: 'Email',
-                ),
+                    text: 'Email', controller: emailController),
               ),
               const SizedBox(height: 16),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.0),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: DefaultTextfield(
                   text: 'Password',
+                  obscureText: true,
+                  controller: passwordController,
                 ),
               ),
               const SizedBox(height: 24),
@@ -74,7 +78,8 @@ class LoginPage extends StatelessWidget {
                 DefaultButton(
                   text: 'Login',
                   onPressed: () {
-                    goToResultPage(context);
+                    controller.doLogin(
+                        emailController.text, passwordController.text);
                   },
                 ),
                 const SizedBox(height: 12),
@@ -89,7 +94,7 @@ class LoginPage extends StatelessWidget {
                   text: 'Create account',
                   onPressed: () {
                     controller.createAccount(
-                        'teste@hotmail.com', 'SenhaComplexa@100');
+                        emailController.text, passwordController.text);
                   },
                 )
               ],
