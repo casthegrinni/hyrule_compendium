@@ -21,7 +21,16 @@ class LoginController implements LoginUseCase {
   }
 
   @override
-  void doLogin(String email, String password) {
-    throw UnimplementedError();
+  Future<void> doLogin(String email, String password) async {
+    try {
+      final userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      debugPrint('Erro inesperado ${userCredential.user?.email}');
+    } on FirebaseAuthException catch (e) {
+      debugPrint('Erro Firebase: $e');
+    } catch (e) {
+      debugPrint('Erro inesperado: $e');
+    }
   }
 }
