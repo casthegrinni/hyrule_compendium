@@ -24,6 +24,9 @@ class LoginPage extends StatelessWidget {
   void _handleLogin(BuildContext context, String email, String password) async {
     final result = await controller.doLogin(email, password);
 
+    if (!context.mounted) {
+      return;
+    }
     if (result.success) {
       goToResultPage(context);
     } else {
@@ -35,6 +38,9 @@ class LoginPage extends StatelessWidget {
       BuildContext context, String email, String password) async {
     final result = await controller.createAccount(email, password);
 
+    if (!context.mounted) {
+      return;
+    }
     if (result.success) {
       goToResultPage(context);
     } else {
