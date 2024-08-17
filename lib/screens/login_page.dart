@@ -21,6 +21,47 @@ class LoginPage extends StatelessWidget {
     );
   }
 
+  void _handleLogin(BuildContext context, String email, String password) async {
+    final result = await controller.doLogin(email, password);
+
+    if (result.success) {
+      goToResultPage(context);
+    } else {
+      _showAlert(context, 'Attention', result.error ?? 'Unexpected error');
+    }
+  }
+
+  void _handleSignIn(
+      BuildContext context, String email, String password) async {
+    final result = await controller.createAccount(email, password);
+
+    if (result.success) {
+      goToResultPage(context);
+    } else {
+      _showAlert(context, 'Attention', result.error ?? 'Unexpected error');
+    }
+  }
+
+  void _showAlert(BuildContext context, String title, String body) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: Text(body),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final TextEditingController emailController = TextEditingController();
@@ -78,8 +119,8 @@ class LoginPage extends StatelessWidget {
                 DefaultButton(
                   text: 'Login',
                   onPressed: () {
-                    controller.doLogin(
-                        emailController.text, passwordController.text);
+                    _handleLogin(
+                        context, emailController.text, passwordController.text);
                   },
                 ),
                 const SizedBox(height: 12),
@@ -93,8 +134,8 @@ class LoginPage extends StatelessWidget {
                 DefaultButton(
                   text: 'Create account',
                   onPressed: () {
-                    controller.createAccount(
-                        emailController.text, passwordController.text);
+                    _handleSignIn(
+                        context, emailController.text, passwordController.text);
                   },
                 )
               ],
