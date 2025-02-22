@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:practice_list_view/data/api/data_api.dart';
 import 'package:practice_list_view/domain/models/simple_request_model.dart';
 import 'package:practice_list_view/domain/use_case/login_use_case.dart';
+import 'package:practice_list_view/utils/consts/login_constants.dart';
 
 class LoginController implements LoginUseCase {
   final DataApi dataApi = DataApi();
@@ -45,6 +46,11 @@ class LoginController implements LoginUseCase {
   }
 
   String? validatePassword(String password) {
+    if (password.isEmpty) {
+      return errorLoginEmpty;
+    } else if (password.length < 6) {
+      return errorLoginSixCharacters;
+    }
     return null;
   }
 }
