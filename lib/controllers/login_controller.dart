@@ -50,7 +50,12 @@ class LoginController implements LoginUseCase {
       return errorLoginEmpty;
     } else if (password.length < 6) {
       return errorLoginSixCharacters;
+    } else if (!RegExp(r'[0-9]').hasMatch(password)) {
+      return errorLoginWithoutNumbers;
+    } else if (!RegExp(r'[a-zA-Z]').hasMatch(password)) {
+      return errorLoginWithoutLetters;
     }
+
     return null;
   }
 }
