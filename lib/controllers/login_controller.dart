@@ -45,16 +45,6 @@ class LoginController implements LoginUseCase {
   }
 
   String? validatePassword(String password) {
-    if (password.isEmpty) {
-      return 'The password should not be empty.';
-    } else if (password.length < 6) {
-      return 'The password should have at least 6 characters';
-    } else if (!password.contains('1234567890')) {
-      return 'The password should have numbers';
-    } else if (!password.toUpperCase().contains('ABCDEFGHIJLKMNOPQRSTUVWXYZ')) {
-      return 'The password should have letters';
-    }
-
     return null;
   }
 }
