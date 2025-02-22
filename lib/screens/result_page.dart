@@ -14,6 +14,7 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: mainColor,
         title: Text(
           'You found a large chest!'.toUpperCase(),
