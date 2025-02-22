@@ -18,6 +18,16 @@ void main() {
   });
 
   test('Show error when only have numbers', () {
-    expect(controller.validatePassword('123456'), errorLoginWithoutNumbers);
+    expect(controller.validatePassword('123456'), errorLoginWithoutLetters);
+  });
+
+  test('Show error when only have letters', () {
+    expect(controller.validatePassword('abcabc'), errorLoginWithoutNumbers);
+  });
+
+  test('Show no error', () {
+    expect(controller.validatePassword('Abc1234'), null);
+    expect(controller.validatePassword('123AbCe'), null);
+    expect(controller.validatePassword('142aBd12'), null);
   });
 }
